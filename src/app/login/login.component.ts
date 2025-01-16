@@ -25,15 +25,12 @@ export class LoginComponent implements OnInit {
    }
 
    onClickSubmit(data: any): void {
+ 
       this.userName = data.userName;
       this.password = data.password;
 
-      console.log("Login page: " + this.userName);
-      console.log("Login page: " + this.password);
-
       this.authService.login(this.userName, this.password).subscribe({
          next: (data) => {
-            console.log("Is Login Success: " + data);
             if (data) {
                this.router.navigate(['/expenses']);
             } else {

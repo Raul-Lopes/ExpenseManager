@@ -12,6 +12,7 @@ import { switchMap } from 'rxjs/operators';
 })
 
 export class ExpenseEntryComponent implements OnInit {
+
   title: string;
   expenseEntry$: Observable<ExpenseEntry>;
   expenseEntry: ExpenseEntry = {} as ExpenseEntry;
@@ -26,11 +27,10 @@ export class ExpenseEntryComponent implements OnInit {
   ngOnInit() {
     this.title = 'Expense Entry';
 
-    // Corrected the return statement
     this.expenseEntry$ = this.route.paramMap.pipe(
       switchMap(params => {
         this.selectedId = Number(params.get('id'));
-        return this.restService.getExpenseEntry(this.selectedId); // Ensure the return is on the same line
+        return this.restService.getExpenseEntry(this.selectedId);
       })
     );
 

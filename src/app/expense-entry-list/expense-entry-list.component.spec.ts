@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ExpenseEntryListComponent } from './expense-entry-list.component';
 
 describe('ExpenseEntryListComponent', () => {

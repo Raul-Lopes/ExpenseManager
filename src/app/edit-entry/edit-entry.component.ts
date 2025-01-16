@@ -24,7 +24,8 @@ export class EditEntryComponent implements OnInit {
 
   constructor(private expenseEntryService: ExpenseEntryService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
 
@@ -62,7 +63,7 @@ export class EditEntryComponent implements OnInit {
   }
 
   onClickSubmit(data: any) {
-    console.log('onClickSubmit fired');
+
     this.id = data.id;
     this.item = data.item;
     this.amount = data.amount;
@@ -80,11 +81,8 @@ export class EditEntryComponent implements OnInit {
       createdOn: new Date(2020, 5, 20)
     }
 
-    console.log(expenseEntry);
-
     if (expenseEntry.id == null || expenseEntry.id == 0) {
 
-      console.log('add fn fired');
       this.expenseEntryService.addExpenseEntry(expenseEntry)
         .subscribe({
           next: (data) => {
@@ -97,13 +95,11 @@ export class EditEntryComponent implements OnInit {
           }
         });
     } else {
-      console.log('edit fn fired');
       this.expenseEntryService.updateExpenseEntry(expenseEntry)
         .subscribe(
           data => {
             console.log(data);
             this.router.navigate(['/expenses']
-
             );
           });
     }

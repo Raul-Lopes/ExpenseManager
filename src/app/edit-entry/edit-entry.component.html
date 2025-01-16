@@ -10,7 +10,7 @@
                         <b><label for="item">Item</label></b>
                         <input type="hidden" class="form-control" id="id" formControlName="id">
                         <input type="text" class="form-control" id="item" formControlName="item">
-                        <div *ngIf="!itemValue?.valid && (itemValue?.dirty ||itemValue?.touched)">
+                        <div *ngIf="!itemValue?.valid && (itemValue?.dirty || itemValue?.touched)">
                             <div [hidden]="!itemValue.errors.required">
                                 Item is required
                             </div>
@@ -19,7 +19,7 @@
                     <div class="form-group">
                         <b><label for="amount">Amount</label></b>
                         <input type="text" class="form-control" id="amount" formControlName="amount">
-                        <div *ngIf="!amountValue?.valid && (amountValue?.dirty ||amountValue?.touched)">
+                        <div *ngIf="!amountValue?.valid && (amountValue?.dirty || amountValue?.touched)">
                             <div [hidden]="!amountValue.errors.required">
                                 Amount is required
                             </div>
@@ -30,7 +30,7 @@
                         <select class="form-control" id="category" formControlName="category">
                             <option>eNodeB</option>
                             <option>gNodeB</option>
-                            <option>MME</option>                            
+                            <option>MME</option>
                         </select>
                         <br>
                     </div>

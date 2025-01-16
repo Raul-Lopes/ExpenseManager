@@ -37,4 +37,32 @@ export class ExpenseEntryListComponent implements OnInit {
          this.getExpenseItems();
       }
    }
+
+   ngOnChanges() {
+      console.log("Change detection")
+   }
+
+   ngDoCheck() {
+      console.log("Custom change detection")
+   }
+   
+   ngAfterContentInit() {
+      console.log("Content initialization")
+   }
+   
+   ngAfterContentChecked() {
+      console.log("Checking changes in content")
+   }
+   
+   ngAfterViewInit() {
+      console.log("View initialization")
+   }
+   
+   ngAfterViewChecked() {
+      console.log("Checking changes in views")
+   }
+   
+   ngOnDestroy() {
+      console.log("Destruction of component / directive")
+   }   
 }
