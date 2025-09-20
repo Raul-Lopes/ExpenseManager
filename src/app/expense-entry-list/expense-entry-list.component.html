@@ -1,0 +1,47 @@
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center" style="padding-top: 20px;">
+      <div class="container" style="padding-left: 0px; padding-right: 0px;">
+        <div class="row">
+          <div class="col-sm" style="text-align: left;">
+            {{ title() }}
+          </div>
+          <div class="col-sm" style="text-align: right;">
+            <button class="btn btn-primary" routerLink="/expenses/add">ADD</button>
+          </div>
+        </div>
+      </div>
+      <div class="container box" style="margin-top: 10px;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="text-start">Radio Nodes</th>
+              <th class="text-end">Amount</th>
+              <th class="text-start">Category</th>
+              <th class="text-start">Location</th>
+              <th class="text-start">Spent On</th>
+              <th>View</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (entry of expenseEntries(); track entry.id) {
+            <tr>
+              <td class="text-start">{{ entry.item }}</td>
+              <td class="text-end">{{ entry.amount }}</td>
+              <td class="text-start">{{ entry.category }}</td>
+              <td class="text-start">{{ entry.location }}</td>
+              <td class="text-start">{{ entry.spendOn | date: 'medium' }}</td>
+              <td><a routerLink="../expenses/detail/{{ entry.id }}">View</a></td>
+              <td><a routerLink="../expenses/edit/{{ entry.id }}">Edit</a></td>
+              <td><a href="#" (click)="deleteExpenseEntry($event, entry.id)">Delete</a></td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
