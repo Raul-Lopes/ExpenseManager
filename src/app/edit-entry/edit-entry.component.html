@@ -1,0 +1,51 @@
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center" style="padding-top: 20px;">
+      <div class="container" style="padding-left: 0px; padding-right: 0px;">
+      </div>
+      <div class="container box" style="margin-top: 10px;">
+        <form [formGroup]="formData" (ngSubmit)="onSubmit()" class="form" novalidate>
+          <div class="form-group">
+            <b><label for="item">Item</label></b>
+            <input type="hidden" class="form-control" id="id" formControlName="id">
+            <input type="text" class="form-control" id="item" formControlName="item">
+            <div *ngIf="itemValue?.invalid && (itemValue?.dirty || itemValue?.touched)">
+              <div *ngIf="itemValue?.errors?.['required']">
+                Item is required
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <b><label for="amount">Amount</label></b>
+            <input type="number" class="form-control" id="amount" formControlName="amount">
+            <div *ngIf="amountValue?.invalid && (amountValue?.dirty || amountValue?.touched)">
+              <div *ngIf="amountValue?.errors?.['required']">
+                Amount is required
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <b><label for="category">Category</label></b>
+            <select class="form-control" id="category" formControlName="category">
+              <option>eNodeB</option>
+              <option>gNodeB</option>
+              <option>MME</option>
+            </select>
+            <br>
+          </div>
+          <div class="form-group">
+            <b><label for="location">location</label></b>
+            <input type="text" class="form-control" id="location" formControlName="location">
+          </div>
+          <div class="form-group">
+            <b><label for="spendOn">spendOn</label></b>
+            <input type="date" class="form-control" id="spendOn" formControlName="spendOn">
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formData.valid">Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

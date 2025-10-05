@@ -1,10 +1,28 @@
 # Expense Manager
 
-Angular and NodeJs for CRUD application example.
+A full-stack CRUD application for tracking expenses, built with Angular frontend and Node.js backend.
 
 ![Expense Manager Application Screenshot](src/assets/images/ExpenseManager.png)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+## Features
+
+- **Complete CRUD Operations**: Add, view, edit, and delete expenses
+- **Expense Categorization**: Organize expenses by categories (eNodeB, gNodeB, MME, etc.)
+- **Detailed Tracking**: Monitor amount, category, location, and spending dates
+- **User-Friendly Interface**: Clean Angular UI with intuitive navigation
+
+## Technology Stack
+
+- **Frontend**: Angular 19
+- **Backend**: Node.js
+- **Build Tool**: Angular CLI
+
+## Project Structure
+
+expense-manager/
+├── frontend/ # Angular application
+├── backend/ # Node.js server
+└── MockServer.js # Mock backend for development
 
 ## Development server
 
