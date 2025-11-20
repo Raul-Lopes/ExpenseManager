@@ -14,7 +14,7 @@ import { StorageService } from './storage.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  information = signal('Angular and NodeJs CRUD');
+  information = signal('©  Raul Lopes. All rights reserved. Built for portfolio and educational purposes. Angular and NodeJs CRUD');
   year = signal(new Date().getFullYear().toString());
   title = signal('Expense Manager');
   isUserLoggedIn = signal(false);
@@ -24,7 +24,6 @@ export class AppComponent {
 
   ngOnInit() {
     const storeData = this.storageService.getItem("isUserLoggedIn");
-    console.log("StoreData: " + storeData);
     this.isUserLoggedIn.set(storeData != null && storeData == "true");
   }
 }

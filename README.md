@@ -1,81 +1,142 @@
 # Expense Manager
 
-A full-stack CRUD application for tracking expenses, built with Angular frontend and Node.js backend.
+A modern, full-stack CRUD application for tracking and managing expenses, built with **Angular 19** and **Node.js**. This project demonstrates the implementation of modern Angular best practices and architectural patterns.
 
 ![Expense Manager Application Screenshot](src/assets/images/ExpenseManager.png)
 
-## Features
+## 🚀 Features
 
-- **Complete CRUD Operations**: Add, view, edit, and delete expenses
-- **Expense Categorization**: Organize expenses by categories (eNodeB, gNodeB, MME, etc.)
-- **Detailed Tracking**: Monitor amount, category, location, and spending dates
-- **User-Friendly Interface**: Clean Angular UI with intuitive navigation
+- **Complete CRUD Operations**: Create, Read, Update, and Delete expense entries.
+- **Authentication**: Secure login and logout functionality (Mock implementation).
+- **Expense Categorization**: Organize expenses by categories for better tracking.
+- **Responsive Design**: Built with Bootstrap 5 for a seamless experience across devices.
+- **Server-Side Rendering (SSR)**: Optimized for performance and SEO using Angular SSR.
+- **Lazy Loading**: Optimized initial load time by lazy loading all route components.
 
-## Technology Stack
+## 🛠️ Technology Stack
 
-- **Frontend**: Angular 19
-- **Backend**: Node.js
+- **Frontend**: Angular 19 (Standalone Components)
+- **Styling**: Bootstrap 5.3
+- **State Management**: Angular Signals & RxJS
+- **Backend**: Node.js with Express (Mock Server)
 - **Build Tool**: Angular CLI
 
-## Project Structure
+## 🏗️ Architecture & Best Practices
 
+This project adheres to strict Angular best practices:
+
+- **Standalone Components**: Fully modular architecture without `NgModule`.
+- **Lazy Loading**: All routes are lazy-loaded to improve performance.
+- **Path Aliases**: Clean imports using `@app/*` and `@env/*` aliases.
+- **Environment Configuration**: Separate configurations for Development and Production.
+- **Strict Typing**: Comprehensive TypeScript typing for reliability.
+- **Guard Protection**: Route guards to protect authenticated routes.
+
+## 📂 Project Structure
+
+```
 expense-manager/
-├── frontend/ # Angular application
-├── backend/ # Node.js server
-└── MockServer.js # Mock backend for development
-
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
+├── src/
+│   ├── app/                 # Angular application source
+│   │   ├── expense-entry/   # Feature components
+│   │   ├── shared/          # Shared services and guards
+│   │   └── ...
+│   ├── environments/        # Environment configurations
+│   └── assets/              # Static assets
+├── MockServer.js            # Mock backend server
+├── angular.json             # Angular workspace configuration
+└── package.json             # Dependencies and scripts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚦 Getting Started
 
-## Code scaffolding
+### Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Node.js (Latest LTS or v20.10.0 recommended)
+- Angular CLI (`npm install -g @angular/cli`)
 
-```bash
-ng generate component component-name
-```
+### Installation
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-ng generate --help
-```
+## 🔌 Backend Setup (Mock Server)
 
-## Building
+To ensure the application works correctly, you need to run the mock backend server.
 
-To build the project run:
+### 🖥️ Running the Mock Server
 
-```bash
-ng build
-```
+To ensure the application works correctly, you need to run the included mock backend server (`MockServer.js`). Follow these steps:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+1. Check Your Node.js Version
+   Make sure you have Node.js v20.10.0 (or a compatible LTS version) installed:
+   ```
+   node -v
+   ```
+   ✅ You should see `v20.10.0` or a similar compatible version.
 
-## Running unit tests
+2. **Navigate to the Project Directory**  
+   Open your terminal and go to the root folder of the project (where `MockServer.js` is located).
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+3. **Install Server Dependencies**  
+   The mock server uses Express. Install it by running:
+   ```
+   npm install express
+   ```
 
+4. **Start the Mock Server**  
+   Launch the server with the appropriate command for your operating system:
+   ```
+   # Windows / Standard terminals
+   node MockServer.js
+
+   # Linux / macOS (standard usage—no ./node prefix needed)
+   node MockServer.js
+   ```
+
+5. **Verify the Server Is Running**  
+   Once started, the server will be available at:  
+   🔗 [http://localhost:8000](http://localhost:8000)  
+   
+   You can open this URL in your browser or test the API using tools like **Postman** or **curl**.
+
+> 💡 Keep the mock server running in the background while developing or using the Angular frontend!
+ 
+## ▶️ Running the Frontend
+
+Once the backend is running:
+ 
+1. Start the Angular Application:
+  ```
+   ng serve
+   ```
+2. **Access the App**:
+   Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## 🧪 Testing
+
+### Unit Tests
+Run unit tests via [Karma](https://karma-runner.github.io):
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+### Build
+Build the project for production:
 ```bash
-ng e2e
+ng build
 ```
+The build artifacts will be stored in the `dist/` directory.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📜 License & Copyright
 
-## Additional Resources
+© Raul Lopes. All rights reserved. Built for portfolio and educational purposes.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+

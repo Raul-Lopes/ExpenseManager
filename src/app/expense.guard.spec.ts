@@ -1,13 +1,20 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
-import { ExpenseGuard } from './expense.guard';
+import { expenseGuard } from './expense.guard';
+import { provideRouter } from '@angular/router';
+import { StorageService } from './storage.service';
 
 describe('expenseGuard', () => {
   const executeGuard: CanActivateFn = (...guardParameters) =>
-    TestBed.runInInjectionContext(() => new ExpenseGuard(...guardParameters));
+    TestBed.runInInjectionContext(() => expenseGuard(...guardParameters));
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [
+        provideRouter([]),
+        StorageService
+      ]
+    });
   });
 
   it('should be created', () => {

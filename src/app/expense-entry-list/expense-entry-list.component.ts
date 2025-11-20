@@ -2,9 +2,9 @@
 import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ExpenseEntry } from '../expense-entry';
-import { DebugService } from '../debug.service';
-import { ExpenseEntryService } from '../expense-entry.service';
+import { ExpenseEntry } from '@app/expense-entry';
+import { DebugService } from '@app/debug.service';
+import { ExpenseEntryService } from '@app/expense-entry.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DestroyRef } from '@angular/core';
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DebugService } from './app/debug.service';
+import { DebugService } from '@app/debug.service';
 
 @Component({
    selector: 'app-debug',

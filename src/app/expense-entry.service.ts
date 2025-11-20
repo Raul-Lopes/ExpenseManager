@@ -4,9 +4,11 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
+import { environment } from '../environments/environment';
+
 @Injectable({ providedIn: 'root' })
 export class ExpenseEntryService {
-  private readonly expenseRestUrl = 'http://localhost:8000/api/expenses';
+  private readonly expenseRestUrl = environment.apiUrl;
   private readonly httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

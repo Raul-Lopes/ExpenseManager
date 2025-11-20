@@ -1,43 +1,37 @@
 import { Routes } from '@angular/router';
-import { ExpenseEntryComponent } from './expense-entry/expense-entry.component';
-import { ExpenseEntryListComponent } from './expense-entry-list/expense-entry-list.component';
-import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
-import { EditEntryComponent } from './edit-entry/edit-entry.component';
-import { AboutComponent } from './about/about.component';
 import { expenseGuard } from './expense.guard';
 
 export const routes: Routes = [
   {
     path: 'about',
-    component: AboutComponent
+    loadComponent: () => import('./about/about.component').then(m => m.AboutComponent)
   },
   {
     path: 'login',
-    component: LoginComponent
+    loadComponent: () => import('./login/login.component').then(m => m.LoginComponent)
   },
   {
     path: 'logout',
-    component: LogoutComponent
+    loadComponent: () => import('./logout/logout.component').then(m => m.LogoutComponent)
   },
   {
     path: 'expenses',
-    component: ExpenseEntryListComponent,
+    loadComponent: () => import('./expense-entry-list/expense-entry-list.component').then(m => m.ExpenseEntryListComponent),
     canActivate: [expenseGuard]
   },
   {
     path: 'expenses/detail/:id',
-    component: ExpenseEntryComponent,
+    loadComponent: () => import('./expense-entry/expense-entry.component').then(m => m.ExpenseEntryComponent),
     canActivate: [expenseGuard]
   },
   {
     path: 'expenses/add',
-    component: EditEntryComponent,
+    loadComponent: () => import('./edit-entry/edit-entry.component').then(m => m.EditEntryComponent),
     canActivate: [expenseGuard]
   },
   {
     path: 'expenses/edit/:id',
-    component: EditEntryComponent,
+    loadComponent: () => import('./edit-entry/edit-entry.component').then(m => m.EditEntryComponent),
     canActivate: [expenseGuard]
   },
   {
